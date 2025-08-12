@@ -1,0 +1,102 @@
+// ROSELLEA - IMAGE OPTIMIZATION & RESPONSIVE IMAGES
+
+// Universal Image Container
+.image-container {
+  position: relative;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.4s ease;
+  }
+}
+
+// Product Images
+.product-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center top;
+  transition: all var(--animation-luxury-smooth);
+  filter: brightness(0.98) contrast(1.02);
+}
+
+// Gallery Images
+.gallery-item img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+  transition: all var(--animation-luxury-smooth);
+  filter: brightness(0.95) contrast(1.05);
+}
+
+// Hero Image Optimization
+.hero-image {
+  background-size: cover !important;
+  background-position: center 25% !important;
+  background-repeat: no-repeat !important;
+}
+
+// Responsive Image Utilities
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-contain {
+  object-fit: contain;
+  object-position: center;
+}
+
+// Face-focused cropping
+.img-face-crop {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+// Aspect Ratio Containers
+.aspect-ratio-1-1 {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.aspect-ratio-16-9 {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.aspect-ratio-3-4 {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+// Image Loading States
+.image-loading {
+  background: linear-gradient(90deg, 
+    rgba(245, 240, 235, 0.8) 25%, 
+    rgba(212, 175, 55, 0.1) 50%, 
+    rgba(245, 240, 235, 0.8) 75%
+  );
+  background-size: 200% 100%;
+  animation: imageLoading 2s infinite;
+}
+
+@keyframes imageLoading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

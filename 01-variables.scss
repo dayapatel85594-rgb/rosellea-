@@ -1,0 +1,68 @@
+// TIMELESS MUSE - DESIGN SYSTEM VARIABLES
+
+// Light Mode Colors
+:root {
+  --bg-primary: #F5F0EB;
+  --text-primary: #1A1A1A;
+  --accent-rose: #D8A39D;
+  --accent-gold: #CBB279;
+  --accent-mauve: #BFA5A0;
+  --accent-sage: #B4C2B2;
+  --white: #FFFFFF;
+  --overlay: rgba(216, 163, 157, 0.9);
+  
+  // Typography
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  
+  // Spacing
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+  
+  // Shadows
+  --shadow-soft: 0 4px 20px rgba(26, 26, 26, 0.08);
+  --shadow-medium: 0 8px 30px rgba(26, 26, 26, 0.12);
+  --shadow-strong: 0 16px 40px rgba(26, 26, 26, 0.15);
+  --shadow-luxury: 0 24px 60px rgba(26, 26, 26, 0.2);
+  
+  // Gradients
+  --gradient-rose: linear-gradient(135deg, var(--accent-rose) 0%, var(--accent-mauve) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--accent-gold) 0%, #D4BA87 100%);
+  --gradient-overlay: linear-gradient(135deg, rgba(216, 163, 157, 0.95) 0%, rgba(203, 178, 121, 0.9) 100%);
+  
+  // Additional Variables
+  --accent-gold: #CBB279;
+  --button-primary: var(--accent-rose);
+  
+  // Transitions
+  --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-luxury: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+  // Border Radius
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+}
+
+// Dark Mode Colors
+[data-theme="dark"] {
+  --bg-primary: #181414;
+  --text-primary: #F5F0EB;
+  --accent-rose: #A27C78;
+  --accent-gold: #CBB279;
+  --accent-mauve: #8C6A66;
+  --accent-sage: #2B2321;
+  --white: #2B2321;
+  --overlay: rgba(162, 124, 120, 0.9);
+  
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-strong: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --shadow-luxury: 0 24px 60px rgba(0, 0, 0, 0.6);
+}

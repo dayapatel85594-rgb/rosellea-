@@ -1,0 +1,123 @@
+// TIMELESS MUSE - RESPONSIVE STYLES
+
+// Mobile Styles
+@media (max-width: 768px) {
+  .hero-luxury {
+    .hero-content .hero-title {
+      font-size: 3rem;
+    }
+    
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      margin-top: var(--space-xl);
+    }
+  }
+  
+  .floating-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-card-luxury {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-content {
+    padding: 2rem;
+  }
+  
+  .navbar-glass {
+    padding: 0.75rem 0;
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  
+  .btn-luxury {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+// Tablet Styles
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-luxury .hero-content .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .product-card-luxury {
+    max-width: 280px;
+  }
+}
+
+// Large Desktop Styles
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .hero-luxury .hero-content .hero-title {
+    font-size: 5rem;
+  }
+  
+  .product-card-luxury .product-image {
+    height: 400px;
+  }
+}
+
+// Dark Mode Responsive Adjustments
+[data-theme="dark"] {
+  .navbar-glass {
+    background: rgba(24, 20, 20, 0.95);
+  }
+  
+  .product-card-luxury {
+    background: var(--white);
+    border-color: rgba(203, 178, 121, 0.3);
+  }
+  
+  .loading-skeleton {
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  }
+}
+
+// Print Styles
+@media print {
+  .navbar-glass,
+  .footer-luxury,
+  .btn-luxury {
+    display: none !important;
+  }
+  
+  .hero-luxury {
+    min-height: auto;
+    page-break-after: always;
+  }
+}
+
+// High DPI Displays
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .product-image,
+  .hero-image {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+// Accessibility - Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hero-luxury::before {
+    animation: none;
+  }
+}

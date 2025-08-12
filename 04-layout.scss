@@ -1,0 +1,185 @@
+// TIMELESS MUSE - LAYOUT STYLES
+
+// Hero Section
+.hero-luxury {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(245, 240, 235, 0.8) 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(216, 163, 157, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(203, 178, 121, 0.1) 0%, transparent 50%);
+    animation: heroGlow 8s ease-in-out infinite alternate;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-lg);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-rose) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      
+      .highlight {
+        color: var(--accent-rose);
+        font-style: italic;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: var(--gradient-rose);
+          border-radius: 2px;
+        }
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-xl);
+      opacity: 0.9;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+  }
+  
+  .hero-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 80%;
+    background: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=1200&fit=crop') center/cover;
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    box-shadow: var(--shadow-luxury);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 60%);
+    }
+  }
+}
+
+// Floating Gallery
+.floating-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-xxl) 0;
+  
+  .gallery-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: all var(--transition-luxury);
+    
+    &:hover {
+      transform: translateY(-8px) rotate(1deg);
+      box-shadow: var(--shadow-luxury);
+    }
+    
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: all var(--transition-luxury);
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-overlay);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-smooth);
+      
+      .overlay-text {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        transform: translateY(20px);
+        transition: all var(--transition-smooth);
+      }
+    }
+    
+    &:hover .overlay {
+      opacity: 1;
+      
+      .overlay-text {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// Footer
+.footer-luxury {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  margin-top: var(--space-xxl);
+  
+  .footer-brand h3 {
+    font-family: var(--font-heading);
+    color: var(--bg-primary);
+  }
+  
+  .footer-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--bg-primary);
+    margin-bottom: var(--space-md);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    a {
+      color: rgba(245, 240, 235, 0.7);
+      text-decoration: none;
+      transition: all var(--transition-smooth);
+      
+      &:hover {
+        color: var(--accent-rose);
+        transform: translateX(5px);
+      }
+    }
+  }
+}

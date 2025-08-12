@@ -1,0 +1,305 @@
+// TIMELESS MUSE - ADDITIONAL COMPONENT STYLES
+
+// Modal Styles
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  .modal-content {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-luxury);
+    
+    .modal-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      padding: var(--space-lg);
+      border-bottom: 1px solid rgba(216, 163, 157, 0.2);
+      
+      .modal-title {
+        margin: 0;
+        font-family: var(--font-heading);
+        color: var(--text-primary);
+      }
+      
+      .modal-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+        opacity: 0.7;
+        transition: all var(--transition-smooth);
+        
+        &:hover {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+    
+    .modal-body {
+      padding: var(--space-lg);
+    }
+    
+    .modal-footer {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: flex-end;
+      padding: var(--space-lg);
+      border-top: 1px solid rgba(216, 163, 157, 0.2);
+    }
+  }
+}
+
+// Category Hero Styles
+.category-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(245, 240, 235, 0.9) 100%);
+  
+  .hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  
+  .hero-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(216, 163, 157, 0.2) 0%, transparent 70%);
+    z-index: 2;
+  }
+  
+  .heavenly-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    
+    span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent-rose);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      
+      &:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+      &:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+      &:nth-child(3) { top: 80%; left: 40%; animation-delay: 4s; }
+      &:nth-child(4) { top: 40%; left: 70%; animation-delay: 1s; }
+      &:nth-child(5) { top: 30%; left: 10%; animation-delay: 3s; }
+    }
+  }
+  
+  .categories-hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 600px;
+    
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-lg);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+    }
+    
+    p {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+  }
+  
+  .hero-visual-container {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    
+    .hero-interactive-img {
+      max-width: 300px;
+      height: auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-medium);
+    }
+  }
+}
+
+// Products Section
+.products-section {
+  padding: var(--space-xxl) 0;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+    
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .products-grid {
+    .col-sm-6, .col-md-4, .col-lg-3 {
+      margin-bottom: var(--space-lg);
+    }
+  }
+}
+
+// Empty State
+.empty-state-container {
+  padding: var(--space-xxl);
+  
+  .empty-state-animation {
+    position: relative;
+    margin-bottom: var(--space-lg);
+    
+    .floating-icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      i {
+        position: absolute;
+        animation: float 3s ease-in-out infinite;
+        
+        &:first-child {
+          top: -20px;
+          left: -30px;
+          animation-delay: 0s;
+        }
+        
+        &:last-child {
+          top: -20px;
+          right: -30px;
+          animation-delay: 1.5s;
+        }
+      }
+    }
+  }
+}
+
+// Toast Notifications
+.toast-container {
+  .toast {
+    background: var(--white);
+    border: 1px solid rgba(216, 163, 157, 0.3);
+    box-shadow: var(--shadow-medium);
+    
+    .toast-header {
+      background: var(--accent-rose);
+      color: white;
+      border-bottom: none;
+      
+      .btn-close {
+        filter: invert(1);
+      }
+    }
+    
+    .toast-body {
+      color: var(--text-primary);
+    }
+  }
+}
+
+// Confirm Modal
+.confirm-modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow-luxury);
+  
+  .modal-header {
+    background: var(--accent-rose);
+    color: white;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  
+  .modal-footer {
+    .btn-secondary {
+      background: var(--accent-sage);
+      border-color: var(--accent-sage);
+      color: white;
+      
+      &:hover {
+        background: var(--accent-mauve);
+        border-color: var(--accent-mauve);
+      }
+    }
+    
+    .btn-danger {
+      background: #dc3545;
+      border-color: #dc3545;
+      
+      &:hover {
+        background: #c82333;
+        border-color: #bd2130;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+// Dark Mode Adjustments
+[data-theme="dark"] {
+  .modal-content,
+  .confirm-modal,
+  .toast {
+    background: var(--white);
+    color: var(--text-primary);
+  }
+  
+  .category-hero {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(24, 20, 20, 0.9) 100%);
+  }
+}

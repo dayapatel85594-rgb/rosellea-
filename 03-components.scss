@@ -1,0 +1,157 @@
+// TIMELESS MUSE - COMPONENT STYLES
+
+// Luxury Buttons
+.btn-luxury {
+  background: var(--gradient-rose);
+  color: white;
+  border: none;
+  padding: 1.25rem 3rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-medium);
+  transition: all var(--transition-luxury);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.8s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-luxury);
+    color: white;
+    
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+// Glass Navbar
+.navbar-glass {
+  background: rgba(245, 240, 235, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(216, 163, 157, 0.2);
+  transition: all var(--transition-smooth);
+  
+  .navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--accent-rose);
+    }
+  }
+  
+  .nav-link {
+    color: var(--text-primary);
+    font-weight: 500;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    transition: all var(--transition-smooth);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-rose);
+      transition: all var(--transition-smooth);
+      transform: translateX(-50%);
+    }
+    
+    &:hover {
+      color: var(--accent-rose);
+      
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+}
+
+// Product Cards
+.product-card-luxury {
+  background: var(--white);
+  border: 1px solid rgba(216, 163, 157, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-luxury);
+  cursor: pointer;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-rose);
+    transform: scaleX(0);
+    transition: transform var(--transition-smooth);
+  }
+  
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-luxury);
+    border-color: var(--accent-rose);
+    
+    &::before {
+      transform: scaleX(1);
+    }
+    
+    .product-image {
+      transform: scale(1.1);
+    }
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: all var(--transition-luxury);
+  }
+  
+  .product-details {
+    padding: var(--space-lg);
+    
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
+    }
+    
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-rose);
+      margin-bottom: var(--space-md);
+      font-family: var(--font-heading);
+    }
+    
+    .product-description {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: var(--space-md);
+      line-height: 1.6;
+    }
+  }
+}

@@ -1,0 +1,471 @@
+/* ===========================================================
+   FeminineWear Profile Page Stylesheet (Complete Integration)
+   =========================================================== */
+
+/* Reset and base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5;
+    background-color: #fefafe;
+    color: #4b2b60;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #15101f;
+    color: #d2b6f2;
+}
+
+/* Container max width */
+.container {
+    max-width: 960px;
+}
+
+/* Typography */
+.profile-page-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 2.75rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: #b2307f;
+    user-select: none;
+}
+
+body.dark-mode .profile-page-title {
+    color: #ff7fbe;
+}
+
+/* Card base */
+.card {
+    background-color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 20px rgba(201, 63, 141, 0.14);
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
+
+body.dark-mode .card {
+    background-color: #3e2f605c;
+    box-shadow: 0 6px 30px rgba(215, 187, 236, 0.6);
+}
+
+.card:hover {
+    box-shadow: 0 6px 26px rgba(201, 63, 141, 0.26);
+}
+
+/* Profile card */
+.profile-card {
+    padding: 2rem;
+    user-select: none;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.profile-header>div:first-child {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #b2307f;
+    object-fit: cover;
+    box-shadow: 0 0 9px #d781c0a8;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover,
+.profile-photo:focus {
+    border-color: #ec69b3;
+    box-shadow: 0 0 14px #e47bbb9a;
+    outline: none;
+}
+
+body.dark-mode .profile-photo {
+    border-color: #ec69b3;
+    box-shadow: 0 0 15px #e47bbbaa;
+}
+
+/* Upload button on photo */
+.btn-upload-photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(to bottom right, #b2307f, #e47bbb);
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 12px #e47bbbaa;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.25s ease;
+}
+
+.btn-upload-photo:hover,
+.btn-upload-photo:focus {
+    background: linear-gradient(to bottom right, #e47bbb, #b2307f);
+    outline: none;
+}
+
+body.dark-mode .btn-upload-photo {
+    background: linear-gradient(to bottom right, #e47bbb, #ff81c3);
+}
+
+/* Profile info container */
+.profile-info {
+    flex-grow: 1;
+    min-width: 280px;
+}
+
+.profile-info p {
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    user-select: text;
+    color: #641e62;
+    font-size: 1rem;
+}
+
+body.dark-mode .profile-info p {
+    color: #dbbdf9;
+}
+
+.profile-info strong {
+    color: #b2307f;
+    margin-right: 0.5rem;
+}
+
+body.dark-mode .profile-info strong {
+    color: #f27ec9;
+}
+
+/* Edit Form */
+.edit-form {
+    margin-top: 1rem;
+}
+
+.edit-form label {
+    font-weight: 600;
+    user-select: none;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #dcd5db;
+    padding: 10px 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    user-select: text;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+    border-color: #b2307f;
+    box-shadow: 0 0 10px #e381bb9e;
+    outline: none;
+}
+
+body.dark-mode .edit-form input,
+body.dark-mode .edit-form textarea {
+    background-color: #382c58a8;
+    border-color: #6e5f8abc;
+    color: #dbbdf9;
+}
+
+body.dark-mode .edit-form input:focus,
+body.dark-mode .edit-form textarea:focus {
+    border-color: #ff7fbe;
+    box-shadow: 0 0 12px #ff7fbeaf;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.btn-pink {
+    background: linear-gradient(to right, #b2307f, #e47bbb);
+    color: white;
+    border: none;
+    box-shadow: 0 5px 20px #e47bbbb0;
+}
+
+.btn-pink:hover,
+.btn-pink:focus {
+    background: linear-gradient(to right, #e47bbb, #b2307f);
+    outline: none;
+}
+
+.btn-outline-pink {
+    border: 2px solid #b2307f;
+    color: #b2307f;
+    background: transparent;
+}
+
+.btn-outline-pink:hover,
+.btn-outline-pink:focus {
+    background: #b2307f;
+    color: white;
+    outline: none;
+    border-color: transparent;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #5a6268;
+    outline: none;
+}
+
+/* Small buttons */
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+}
+
+/* Buttons in forms */
+.edit-form .btn {
+    margin-top: 1rem;
+}
+
+.btn-upload-photo {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/* Password toggle button */
+.password-toggle {
+    position: absolute;
+    top: 38px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #b2307f;
+    user-select: none;
+    padding: 0;
+}
+
+.password-toggle:focus {
+    outline: none;
+}
+
+.password-toggle i {
+    font-size: 1rem;
+}
+
+body.dark-mode .password-toggle {
+    color: #f27ec9;
+}
+
+/* Inputs with errors */
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: #d03432;
+    padding-right: calc(1.5em + 0.75rem);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.invalid-feedback {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Notifications container */
+.notification-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 320px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Toast styles */
+.toast {
+    background: linear-gradient(135deg, #b2307f 10%, #e47bbb 90%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px #e47bbb80;
+    font-weight: 600;
+    user-select: none;
+    opacity: 0;
+    transform: translateX(100%);
+    animation-fill-mode: forwards;
+}
+
+.toast.show {
+    animation: slideIn 0.4s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Order History */
+.order-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(201, 63, 141, 0.15);
+    margin-bottom: 20px;
+    user-select: none;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.order-card:hover,
+.order-card:focus {
+    box-shadow: 0 8px 30px rgba(201, 63, 141, 0.25);
+    transform: translateY(-5px);
+    outline: none;
+}
+
+body.dark-mode .order-card {
+    background-color: #3e2c5680;
+    box-shadow: 0 6px 25px rgba(209, 160, 255, 0.3);
+}
+
+.order-product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.order-product img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    object-fit: cover;
+    user-select: none;
+}
+
+.order-product div {
+    max-width: calc(100% - 100px);
+}
+
+.order-product h6 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #681a73;
+    margin-bottom: 3px;
+    user-select: text;
+}
+
+body.dark-mode .order-product h6 {
+    color: #d9b9f0;
+}
+
+.order-product small {
+    font-size: 0.9rem;
+    color: #9879a7;
+}
+
+body.dark-mode .order-product small {
+    color: #cbbdf7;
+}
+
+.order-shipping {
+    border-radius: 12px;
+    background-color: #f6eaf5;
+    padding: 15px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #7e49a0;
+    user-select: text;
+}
+
+body.dark-mode .order-shipping {
+    background-color: #522e7945;
+    color: #cdbaf4;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    #profileName {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .order-product div {
+        max-width: 100%;
+    }
+
+    .order-product h6 {
+        white-space: normal;
+    }
+}
+
+/* Utility */
+.text-muted {
+    user-select: text;
+}
+
+/* Accessible focus outline for tabbable items */
+:focus-visible {
+    outline: 2px solid #b2307f;
+    outline-offset: 2px;
+}
+
+/* Hide file input */
+input[type="file"] {
+    display: none;
+}

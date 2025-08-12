@@ -1,0 +1,386 @@
+/*--------------------------------------------------------------
+Auth Pages (Login & Register) - Unified Stylesheet
+- Design is consistent with style.css (homepage)
+- Includes styles for form validation and password strength
+- Fully responsive with a premium dark mode
+--------------------------------------------------------------*/
+
+/* === GLOBAL & LAYOUT === */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #23213a;
+    line-height: 1.67;
+    overflow-x: hidden;
+}
+
+.register-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 32px 12px 48px;
+}
+
+/* === MAIN AUTH CARD === */
+.register-form-card {
+    background: #fff;
+    border-radius: 1.7rem;
+    box-shadow: 0 8px 28px #c93f8d11, 0 2px 6px #00000010;
+    max-width: 430px;
+    width: 100%;
+    padding: 2.5rem 2.8rem;
+    animation: fadeInUp 0.91s both;
+    color: #4f2348;
+}
+
+.register-form-card h2 {
+    color: #c93f8d;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 2.1rem;
+    margin-bottom: 0.7rem;
+}
+
+.register-form-card p.lead {
+    font-size: 1rem;
+    color: #76627e;
+    margin-bottom: 1.8rem;
+}
+
+/* === FORM ELEMENTS === */
+.register-form-card form label {
+    color: #73486f;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.register-form-card .form-control {
+    border-radius: 1.15rem;
+    padding: 0.7rem 1.2rem;
+    border: 1.3px solid #d9b2db50;
+    background: #faf6fa;
+    color: #4f2348;
+    font-size: 1rem;
+    transition: border 0.18s, background 0.22s;
+}
+
+.register-form-card .form-control::placeholder {
+    color: #b799b6;
+    opacity: 0.8;
+}
+
+.register-form-card .form-control:focus {
+    border-color: #bc73b9;
+    background: #f3e2f5;
+    outline: none;
+    box-shadow: 0 2px 8px #e5b0df33;
+}
+
+/* === BUTTON - Consistent with Homepage hero-cta === */
+.register-form-card .hero-cta {
+    margin-top: 1.2rem;
+    background: linear-gradient(90deg, #c93f8d 60%, #6e81ff 140%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 0.8rem 2.2rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 0 7px 20px 0 rgba(201, 63, 141, 0.22);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-form-card .hero-cta:hover,
+.register-form-card .hero-cta:focus {
+    background: linear-gradient(87deg, #d14b9a, #e99ade 70%);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 15px rgba(201, 63, 141, 0.3);
+    outline: none;
+}
+
+/* === REDIRECT LINK === */
+.signin-redirect {
+    font-size: 0.99rem;
+    color: #af90c8;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.signin-redirect a {
+    position: relative;
+    color: #a984e2;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.16s;
+}
+
+.signin-redirect a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2.5px;
+    width: 100%;
+    height: 2px;
+    background: #ad9ce9;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.22s;
+}
+
+.signin-redirect a:hover,
+.signin-redirect a:focus {
+    color: #d1c2ff;
+    outline: none;
+}
+
+.signin-redirect a:hover::after,
+.signin-redirect a:focus::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+/* === VALIDATION & PASSWORD STRENGTH === */
+.error-text {
+    color: #dc3545;
+    font-size: 0.875em;
+    font-weight: 500;
+    display: block;
+    height: 1em;
+    margin-top: 0.25rem;
+}
+
+.mb-3.error .form-control {
+    border-color: #dc3545;
+}
+
+.password-strength-meter {
+    height: 10px;
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.password-strength-meter div {
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    text-align: center;
+    font-size: 8px;
+    line-height: 10px;
+    font-weight: bold;
+}
+
+/* === UI ELEMENTS (Back Arrow, Dark Toggle) === */
+.back-arrow-btn,
+.register-dark-toggle {
+    position: absolute;
+    top: 38px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 11;
+    transition: all 0.2s ease-in-out;
+}
+
+.back-arrow-btn {
+    left: 18px;
+    background: #fff;
+    color: #8a6fcc;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    border: 1.3px solid #baa0ef44;
+    box-shadow: 0 2px 12px #bfb2d820;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-arrow-btn:hover,
+.back-arrow-btn:focus {
+    background: #ede6fd;
+    color: #a865c9;
+    transform: scale(1.1);
+    outline: none;
+}
+
+.register-dark-toggle {
+    right: 18px;
+    display: flex;
+    align-items: center;
+    background: #faf2faee;
+    border-radius: 2rem;
+    box-shadow: 0 2px 8px #d1bbff15;
+    padding: 5px 16px 5px 9px;
+    color: #687693;
+    font-weight: 500;
+    font-size: 1.09rem;
+    border: 1.1px solid #cfb5f455;
+}
+
+.register-dark-toggle .nav-icon {
+    font-size: 1.3rem;
+    color: #a865c9;
+    margin-right: 6px;
+}
+
+.register-dark-toggle:hover,
+.register-dark-toggle:focus {
+    background: #e0d9f0;
+    color: #8a6fcc;
+    outline: none;
+}
+
+/*--------------------------------------------------------------
+  DARK MODE STYLES
+--------------------------------------------------------------*/
+body.dark-mode {
+    background: #15151a;
+    /* Matches homepage dark background */
+    color: #f5ece9;
+}
+
+body.dark-mode .register-form-card {
+    background: rgba(45, 23, 56, 0.85);
+    /* Matches homepage dark product card */
+    box-shadow: 0 8px 40px #534a8054, 0 3px 14px #c7bcf326;
+    color: #eae3fa;
+}
+
+body.dark-mode .register-form-card h2 {
+    color: #ffcbe4;
+    /* Matches homepage dark brand color */
+    text-shadow: 0 1px 10px #55489a33;
+}
+
+body.dark-mode .register-form-card p.lead {
+    color: #c4bbe6;
+}
+
+body.dark-mode .register-form-card form label {
+    color: #d5bff5;
+}
+
+body.dark-mode .register-form-card .form-control {
+    background: rgba(65, 50, 94, 0.77);
+    color: #e1d6fa;
+    border-color: #ad8ef722;
+}
+
+body.dark-mode .register-form-card .form-control::placeholder {
+    color: #b9a4c9bb;
+}
+
+body.dark-mode .register-form-card .form-control:focus {
+    background: rgba(70, 57, 110, 0.96);
+    color: #fff;
+    border-color: #dabefc;
+    box-shadow: none;
+}
+
+/* Dark Mode Button - Consistent with Homepage */
+body.dark-mode .register-form-card .hero-cta {
+    background: linear-gradient(90deg, #9d45c6 55%, #c93f8d 100%);
+}
+
+body.dark-mode .register-form-card .hero-cta:hover,
+body.dark-mode .register-form-card .hero-cta:focus {
+    background: linear-gradient(80deg, #ff61bb, #d890ca);
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* Dark Mode UI Elements */
+body.dark-mode .back-arrow-btn {
+    background: #463a63;
+    color: #bfacff;
+    border-color: #bc98d45e;
+    box-shadow: 0 0 10px #875de73d;
+}
+
+body.dark-mode .register-dark-toggle {
+    background: #382f50f0;
+    color: #c9bbef;
+    border-color: #7c679c26;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 575px) {
+    .register-form-card {
+        padding: 2rem 1.8rem;
+        border-radius: 1.4rem;
+    }
+
+    .register-dark-toggle,
+    .back-arrow-btn {
+        top: 20px;
+    }
+}
+
+/* === ANIMATION === */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Password Show/Hide Icon Styling === */
+
+/* This wrapper holds the input and the icon together */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Make the input field take up all the space in the wrapper */
+.password-wrapper .form-control {
+    flex: 1;
+    /* Add padding to the right so text doesn't go under the icon */
+    padding-right: 45px;
+}
+
+/* Style and position the icon itself */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    /* Position icon inside the input area */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9a8a9e;
+    /* A subtle color for the icon */
+    z-index: 2;
+    /* Ensure the icon is on top of the input field */
+}
+
+/* Change the icon color on hover for better user feedback */
+.toggle-password:hover {
+    color: #c93f8d;
+    /* Match your brand's primary pink color */
+}
+/* === HIDE BROWSER'S DEFAULT PASSWORD ICON === */
+
+/* For Chrome, Safari, Edge */
+input[type="password"]::-webkit-reveal,
+input[type="password"]::-webkit-clear-button {
+    display: none !important;
+}
+
+/* For Internet Explorer */
+input[type="password"]::-ms-reveal {
+    display: none !important;
+}

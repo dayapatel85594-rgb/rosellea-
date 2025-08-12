@@ -1,0 +1,375 @@
+// TIMELESS MUSE - WORLD-CLASS VISUAL EFFECTS
+
+// Particle System
+.luxury-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+    border-radius: 50%;
+    animation: particleFloat 15s linear infinite;
+    
+    &:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+    &:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 18s; }
+    &:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 14s; }
+    &:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 16s; }
+    &:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 13s; }
+    &:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 17s; }
+    &:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 15s; }
+    &:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 19s; }
+    &:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 11s; }
+  }
+}
+
+// Premium Loading States
+.loading-skeleton {
+  background: linear-gradient(90deg, 
+    rgba(245, 240, 235, 0.8) 25%, 
+    rgba(212, 175, 55, 0.1) 50%, 
+    rgba(245, 240, 235, 0.8) 75%
+  );
+  background-size: 200% 100%;
+  animation: luxuryLoading 2s infinite;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      transparent 30%, 
+      rgba(255, 255, 255, 0.5) 50%, 
+      transparent 70%
+    );
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+// Ultra-Premium Navigation
+.navbar-glass {
+  background: rgba(245, 240, 235, 0.85);
+  backdrop-filter: blur(25px) saturate(180%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all var(--animation-luxury-smooth);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+  
+  &.scrolled {
+    background: rgba(245, 240, 235, 0.95);
+    box-shadow: var(--shadow-luxury-medium);
+    transform: translateY(-2px);
+  }
+  
+  .navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #2C1810;
+    text-decoration: none;
+    transition: all var(--animation-luxury-smooth);
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    
+    &::after {
+      content: '✨';
+      position: absolute;
+      top: -5px;
+      right: -25px;
+      font-size: 1rem;
+      animation: brandSparkle 3s ease-in-out infinite;
+    }
+    
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+  }
+  
+  .nav-link {
+    color: #2C1810 !important;
+    font-weight: 600;
+    position: relative;
+    padding: 1rem 1.5rem;
+    transition: all var(--animation-luxury-smooth);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: var(--gradient-luxury-gold);
+      transition: all var(--animation-luxury-smooth);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+      transition: all var(--animation-luxury-smooth);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+    
+    &:hover {
+      color: #D4AF37 !important;
+      transform: translateY(-2px);
+      
+      &::before {
+        width: 80%;
+      }
+      
+      &::after {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+// Premium Footer Enhancement
+.footer-luxury {
+  position: relative;
+  background: linear-gradient(135deg, 
+    #1A1A1A 0%, 
+    #2C2C2C 25%,
+    #1A1A1A 50%,
+    #2C2C2C 75%,
+    #1A1A1A 100%
+  );
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-luxury-gold);
+    animation: footerGlow 4s ease-in-out infinite alternate;
+  }
+  
+  .footer-brand h3 {
+    background: var(--gradient-luxury-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    
+    &::after {
+      content: '👑';
+      position: absolute;
+      top: -5px;
+      right: -30px;
+      font-size: 1.5rem;
+      animation: crownFloat 3s ease-in-out infinite alternate;
+    }
+  }
+}
+
+// World-Class Testimonial Enhancement
+.testimonial-slider {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(216, 163, 157, 0.1) 0%, transparent 50%);
+    animation: testimonialGlow 10s ease-in-out infinite alternate;
+  }
+  
+  .testimonial-item {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: var(--shadow-luxury-medium);
+    transition: all var(--animation-luxury-smooth);
+    
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--shadow-luxury-ultimate);
+    }
+    
+    .testimonial-text {
+      position: relative;
+      
+      &::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        font-size: 4rem;
+        color: var(--accent-gold);
+        opacity: 0.3;
+        font-family: var(--font-heading);
+      }
+      
+      &::after {
+        content: '"';
+        position: absolute;
+        bottom: -40px;
+        right: -20px;
+        font-size: 4rem;
+        color: var(--accent-gold);
+        opacity: 0.3;
+        font-family: var(--font-heading);
+      }
+    }
+  }
+}
+
+// Premium Scroll Effects
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Luxury Cursor Effects
+.luxury-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+  
+  &.hover {
+    transform: scale(2);
+    background: radial-gradient(circle, rgba(216, 163, 157, 0.6) 0%, transparent 70%);
+  }
+}
+
+// Premium Animations
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes luxuryLoading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes brandSparkle {
+  0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+
+@keyframes footerGlow {
+  0% { opacity: 0.5; box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+  100% { opacity: 1; box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes crownFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-5px) rotate(10deg); }
+}
+
+@keyframes testimonialGlow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+// Intersection Observer Animations
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  &.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
